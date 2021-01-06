@@ -27,7 +27,7 @@ body{position: relative;}
 }
 .search_color{background-color: #fafafa;}
 .chat_color {background-color: #eaeaea;}
-
+ul>li {list-style: none;}
 /* Margin */
 .m_left10{margin-left: 10px;}
 .m_left20{margin: 20px;}
@@ -175,7 +175,5 @@ textarea,.search_chat>input, button{border: none;}
     min-height: 106px;
     width: 100%;
 }
-.red{
-    /* height: 60%; */
-    width: 100%;
-}
+
+

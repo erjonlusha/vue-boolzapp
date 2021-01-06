@@ -3,10 +3,13 @@ let root = new Vue({
   el: "#app",
 
   data: {
-    contacts: [{
+      chiave: '[]',
+      newMessage: "",
+      contacts: [{
         name: 'Michele',
         avatar: '_1',
         visible: true,
+        onView:false,
         messages: [{
             date: '10/01/2020 15:30:55',
             text: 'Hai portato a spasso il cane?',
@@ -28,6 +31,7 @@ let root = new Vue({
         name: 'Fabio',
         avatar: '_2',
         visible: true,
+        onView:false,
         messages: [{
             date: '20/03/2020 16:30:00',
             text: 'Ciao come stai?',
@@ -49,6 +53,7 @@ let root = new Vue({
         name: 'Samuele',
         avatar: '_3',
         visible: true,
+        onView:false,
         messages: [{
             date: '28/03/2020 10:10:40',
             text: 'La Marianna va in campagna',
@@ -70,6 +75,7 @@ let root = new Vue({
         name: 'Luisa',
         avatar: '_4',
         visible: true,
+        onView:false,
         messages: [{
             date: '10/01/2020 15:30:55',
             text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -86,6 +92,7 @@ let root = new Vue({
         name: 'Name',
         avatar: '',
         visible: true,
+        onView:true,
         messages: [{
             date: '10/01/2020 15:30:55',
             text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -99,8 +106,52 @@ let root = new Vue({
         ],
         }
     ],
+    },
+    
+    methods:{
+            sulclick(e, key) {
+            console.log(key)
+            chiave=this.contacts[key].onView
+            console.log(chiave)
+            this.contacts.forEach(element => {
+                if (element.onView){
+                    element.onView=false;
+                }
+            });
+            this.contacts[key].onView = true;
+        },
+
+        addFakeMsg(){
+            // this.contacts[index].messages.push(this.newMessage);
+            this.contacts.forEach(element => {
+                if (element.onView){
+                    console.log(element);
+                    element.messages.push({
+                        date: '10/01/2020 15:50:00',
+                        text: 'ok',
+                        status: 'received'
+                    })
+                }
+            });
+        },
+        
+        addNewMessage(){
+            // this.contacts[index].messages.push(this.newMessage);
+            this.contacts.forEach(element => {
+                if (element.onView){
+                    console.log(element);
+                    element.messages.push({
+                        date: '10/01/2020 15:50:00',
+                        text: this.newMessage,
+                        status: 'sent'
+                    })
+                }
+            });
+            console.log(this.newMessage)
+            
+            // setInterval(this.next, 3000);
+            setInterval(() => {this.addFakeMsg()}, 1000);
+        },
     }
 });
-
-
 
