@@ -151,7 +151,7 @@ let root = new Vue({
             console.log(this.newMessage)
             
             // setInterval(this.next, 3000);
-            setInterval(() => {this.addFakeMsg()}, 1000);
+            setTimeout(() => {this.addFakeMsg()}, 1000);
         },
         search(index){
             this.contacts.forEach(element=>{

@@ -36,7 +36,8 @@ ul>li {list-style: none;}
 .m_right15{margin-right: 15px;}
 /* Padding */
 .ptot_10{padding: 10px;}
-.ptot_5{padding: 5px;}
+.ptb_10{padding: 0 10px}
+.ptb_5{padding: 0 5px;}
 
 .aside_left{
     background-color: white;
@@ -48,7 +49,6 @@ ul>li {list-style: none;}
     justify-content: space-between;
     display: flex;
 }
-/* .user_info{} */
 .img{align-self: center;}
 .img>span>svg{
     width: 60px;
@@ -67,15 +67,16 @@ ul>li {list-style: none;}
     line-height: 30px;
 }
 
-.options {    
-    /* justify-self:flex-end; */
+.options {
     align-self: center;
 }
 .options>span>svg{
-    height: 40px;
     color: #b1b1b1;
 }
-
+.search_svg>svg {
+    height: 25px;
+    width: 18px;
+}
 .notifications{background-color: #8edafc;}
 .img.bell{color: white;}
 .testo_notifiche{align-self: center;}
@@ -122,7 +123,9 @@ textarea,.search_chat>input, button{border: none;}
     height: fit-content;
     align-self: center;
 }
-.last_access{text-decoration: none;}
+.last_access, .last_msg {
+    text-decoration: none;
+}
 .msg_view {
     background-image: url(../img/mine.jpg);
     height: calc(100% - 100px);
